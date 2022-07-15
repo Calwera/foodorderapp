@@ -1,0 +1,6 @@
+import React from "react";
+import CartIcon from "./CartIcon";
+import classes from "./Cart.module.css";
+const Cart = () => {};
+
+export default Cart;
