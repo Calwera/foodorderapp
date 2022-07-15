@@ -1,9 +1,10 @@
 import React, { Component, useState } from "react";
 import Header from "./components/Header/Header";
+import "./App.css";
 function App() {
   return (
     <React.Fragment>
-      <Header></Header>;<div>Dzialamy</div>;
+      <Header />
     </React.Fragment>
   );
 }

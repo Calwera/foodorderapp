@@ -12,6 +12,7 @@ module.exports = {
         loader: "babel-loader",
         options: { presets: ["@babel/env"] },
       },
+      { test: /\.(png|jpg)$/, loader: "url-loader?limit=8192" },
       {
         test: /\.css$/,
         use: [
