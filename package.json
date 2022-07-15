@@ -1,0 +1,35 @@
+{
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "name": "react_to_do",
+    "version": "1.0.0",
+    "description": "Practice Projecrt",
+    "main": "index.js",
+    "devDependencies": {
+      "@babel/cli": "^7.1.0",
+      "@babel/core": "^7.1.0",
+      "@babel/preset-env": "^7.1.0",
+      "@babel/preset-react": "^7.0.0",
+      "babel-loader": "^8.0.2",
+      "css-loader": "^1.0.0",
+      "style-loader": "^0.23.0",
+      "webpack": "^4.19.1",
+      "webpack-cli": "^3.1.1",
+      "webpack-dev-server": "^3.1.8"
+    },
+    "scripts": {
+      "start": "webpack-dev-server --mode development"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "author": "Krzysztof Wróbel",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Calwera/React_to_do/issues"
+    },
+    "homepage": "https://github.com/Calwera/React_to_do#readme"
+  }
