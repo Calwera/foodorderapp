@@ -32,7 +32,9 @@ const DUMMY_MEALS = [
 const AvailableMeals = (props) => {
   return (
     <ul className={classes.meals}>
-      <MealItem meal={DUMMY_MEALS} />
+      {DUMMY_MEALS.map((item) => (
+        <MealItem meal={item} />
+      ))}
     </ul>
   );
 };
