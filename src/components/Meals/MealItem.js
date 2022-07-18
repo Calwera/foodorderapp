@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
+import Input from "../UI/Input";
 
 const MealItem = (props) => {
   return (
@@ -10,9 +11,8 @@ const MealItem = (props) => {
         <p className={classes.description}>{props.meal.description}</p>
         <p className={classes.price}>{props.meal.price}</p>
       </div>
-      <div className={classes.form}>
-        <label htmlFor="quantity">Amount</label>
-        <input type="number" id="quantity" placeholder="1"></input>
+      <div>
+        <Input />
         <MealItemForm />
       </div>
     </li>
