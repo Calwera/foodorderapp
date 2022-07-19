@@ -9,7 +9,7 @@ const HeaderCartButton = () => {
       <div className={styles.icon}>
         <CartIcon />
       </div>
-      <div className={styles.icon}>Your Cart</div>
+      <div>Your Cart</div>
       <div className={styles.badge}>0</div>
     </div>
   );

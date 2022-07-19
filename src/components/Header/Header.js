@@ -6,10 +6,10 @@ import logo from "../../../img/meals.jpg";
 const Header = () => {
   return (
     <Fragment>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <h1>ReactMeals</h1>
         <HeaderCartButton />
-      </div>
+      </header>
       <div className={styles.mainimage}>
         <img src={logo}></img>
       </div>

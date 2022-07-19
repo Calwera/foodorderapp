@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
 import Input from "../UI/Input";
 
 const MealItem = (props) => {
+  const [isMeal, setIsMeal] = useState(0);
+  const addMealto = () => {
+    console.log("dzialam kurwa");
+  };
   return (
     <li className={classes.meal}>
       <div>
@@ -13,7 +17,11 @@ const MealItem = (props) => {
       </div>
       <div>
         <Input />
-        <MealItemForm />
+        <MealItemForm
+          onClick={() => {
+            console.log("dziala?");
+          }}
+        />
       </div>
     </li>
   );

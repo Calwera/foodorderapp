@@ -6,7 +6,7 @@ const Input = () => {
   return (
     <div className={classes.input}>
       <label htmlFor="quantity">Amount</label>
-      <input id="quantity" placeholder="0" type="number"></input>
+      <input id="quantity" placeholder="1" type="number"></input>
     </div>
   );
 };
