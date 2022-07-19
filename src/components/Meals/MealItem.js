@@ -6,7 +6,7 @@ import Input from "../UI/Input";
 const MealItem = (props) => {
   const [isMeal, setIsMeal] = useState(0);
   const addMealto = () => {
-    console.log("dzialam kurwa");
+    console.log("dzialam");
   };
   return (
     <li className={classes.meal}>
@@ -17,11 +17,7 @@ const MealItem = (props) => {
       </div>
       <div>
         <Input />
-        <MealItemForm
-          onClick={() => {
-            console.log("dziala?");
-          }}
-        />
+        <MealItemForm onCustomClick={addMealto} />
       </div>
     </li>
   );
