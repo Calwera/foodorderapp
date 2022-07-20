@@ -5,8 +5,14 @@ import Input from "../UI/Input";
 
 const MealItem = (props) => {
   const [isMeal, setIsMeal] = useState(0);
+  const [isAmount, setAmount] = useState(0);
+  const setQuantity = (amount) => {
+    setAmount(amount);
+  };
   const addMealto = () => {
-    console.log("dzialam");
+    setIsMeal(() => {
+      return isMeal + +isAmount;
+    });
   };
   return (
     <li className={classes.meal}>
@@ -16,7 +22,7 @@ const MealItem = (props) => {
         <p className={classes.price}>{props.meal.price}</p>
       </div>
       <div>
-        <Input />
+        <Input quantity={setQuantity} />
         <MealItemForm onCustomClick={addMealto} />
       </div>
     </li>
