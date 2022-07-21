@@ -9,12 +9,17 @@ const Cart = () => {
 
   return (
     <div>
-      <ul>
-        <li>
-          <span>Schniteck</span>
-          <span>122$</span>
+      <ul className={classes.total}>
+        <li className={classes["cart-items"]}>
+          <div>Schniteck</div>
+          <div>122$</div>
         </li>
+        <div className={classes.actions}>
+          <button>-</button>
+          <button>+</button>
+        </div>
       </ul>
+
       <div>
         <div className={classes.total}>
           <span>Total Amount</span>

@@ -9,7 +9,7 @@ function App() {
   return (
     <CartContext.Provider>
       <Header />
-      {/* <Modal /> */}
+      <Modal />
       <MealsSummary />
       <AvailableMeals />
     </CartContext.Provider>
