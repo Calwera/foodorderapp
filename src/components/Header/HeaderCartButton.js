@@ -5,13 +5,13 @@ import styles from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = () => {
   return (
-    <div className={styles.button}>
+    <button className={styles.button}>
       <div className={styles.icon}>
         <CartIcon />
       </div>
       <div>Your Cart</div>
       <div className={styles.badge}>0</div>
-    </div>
+    </button>
   );
 };
 

@@ -4,6 +4,7 @@ import MealItemForm from "./MealItemForm";
 import Input from "../UI/Input";
 
 const MealItem = (props) => {
+  const price = `$${props.meal.price.toFixed(2)}`;
   const [isMeal, setIsMeal] = useState(0);
   const [isAmount, setAmount] = useState(0);
   const setQuantity = (amount) => {
@@ -19,10 +20,21 @@ const MealItem = (props) => {
       <div>
         <h3>{props.meal.name}</h3>
         <p className={classes.description}>{props.meal.description}</p>
-        <p className={classes.price}>{props.meal.price}</p>
+        <p className={classes.price}>{price}</p>
       </div>
       <div>
-        <Input quantity={setQuantity} />
+        <Input
+          quantity={setQuantity}
+          label="Amount"
+          input={{
+            id: "amount_" + props.meal.id,
+            type: "number",
+            min: "1",
+            max: "5",
+            step: "1",
+            defaultValue: "1",
+          }}
+        />
         <MealItemForm onCustomClick={addMealto} />
       </div>
     </li>

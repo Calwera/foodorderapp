@@ -8,13 +8,8 @@ const Input = (props) => {
   };
   return (
     <div className={classes.input}>
-      <label htmlFor="quantity">Amount</label>
-      <input
-        onChange={quantityChangeHandler}
-        id="quantity"
-        placeholder="1"
-        type="number"
-      ></input>
+      <label htmlFor={props.input.id}>{props.label}</label>
+      <input onChange={quantityChangeHandler} {...props.input}></input>
     </div>
   );
 };
