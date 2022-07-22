@@ -6,10 +6,20 @@ import Modal from "./components/Modal/Modal";
 import CartContext from "./context/cart-context";
 
 function App() {
+  const [shownState, setShownState] = useState(false);
+
+  const showModalHandler = () => {
+    setShownState(true);
+  };
+
+  const hideModalHandler = () => {
+    setShownState(false);
+  };
+
   return (
     <CartContext.Provider>
-      <Header />
-      <Modal />
+      <Header onShowModal={showModalHandler} />
+      {shownState && <Modal onHideModal={hideModalHandler} />}
       <MealsSummary />
       <AvailableMeals />
     </CartContext.Provider>

@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./Cart.module.css";
 
-const Cart = () => {
+const Cart = (props) => {
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {[{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }].map((item) => (
@@ -22,7 +22,9 @@ const Cart = () => {
         <span>35.53</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes["button--alt"]}>Close</button>
+        <button onClick={props.onClick} className={classes["button--alt"]}>
+          Close
+        </button>
         <button className={classes.button} onClick={orderFood}>
           Order
         </button>

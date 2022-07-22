@@ -1,16 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import classes from "./Modal.module.css";
 import Card from "../UI/Card";
 import Cart from "../Cart/Cart";
 
-const Modal = () => {
+const Modal = (props) => {
   return (
-    <div className={classes.backdrop}>
+    <Fragment>
       <Card className={classes.modal}>
-        <Cart />
+        <Cart onClick={props.onHideModal} />
       </Card>
-    </div>
+      <div onClick={props.onHideModal} className={classes.backdrop}></div>
+    </Fragment>
   );
 };
 
