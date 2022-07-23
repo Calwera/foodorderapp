@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext, createContext } from "react";
 import classes from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
 import Input from "../UI/Input";
+import CartContext from "../../context/cart-context";
 
 const MealItem = (props) => {
+  const ctx = useContext(CartContext);
   const price = `$${props.meal.price.toFixed(2)}`;
   const [isMeal, setIsMeal] = useState(0);
   const [isAmount, setAmount] = useState(0);
@@ -13,6 +15,9 @@ const MealItem = (props) => {
   const addMealto = () => {
     setIsMeal(() => {
       return isMeal + +isAmount;
+    });
+    ctx.addComp((numb) => {
+      return [+numb + 1];
     });
   };
   return (

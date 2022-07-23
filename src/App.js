@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import MealsSummary from "./components/Meals/MealsSummary";
 import AvailableMeals from "./components/Meals/AvailableMeals";
 import Modal from "./components/Modal/Modal";
-import CartContext from "./context/cart-context";
+import CartProvider from "./context/CartProvider";
 
 function App() {
   const [shownState, setShownState] = useState(false);
@@ -17,12 +17,12 @@ function App() {
   };
 
   return (
-    <CartContext.Provider>
+    <CartProvider>
       <Header onShowModal={showModalHandler} />
       {shownState && <Modal onHideModal={hideModalHandler} />}
       <MealsSummary />
       <AvailableMeals />
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 export default App;
