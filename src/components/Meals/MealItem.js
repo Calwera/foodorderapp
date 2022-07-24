@@ -7,17 +7,24 @@ import CartContext from "../../context/cart-context";
 const MealItem = (props) => {
   const ctx = useContext(CartContext);
   const price = `$${props.meal.price.toFixed(2)}`;
-  const [isMeal, setIsMeal] = useState(0);
-  const [isAmount, setAmount] = useState(0);
+  const [isAmount, setAmount] = useState(1);
   const setQuantity = (amount) => {
     setAmount(amount);
   };
   const addMealto = () => {
-    setIsMeal(() => {
-      return isMeal + +isAmount;
+    ctx.addItem((item) => {
+      return [
+        ...item,
+        {
+          id: props.meal.id,
+          name: props.meal.name,
+          price: props.meal.price,
+          quantity: isAmount,
+        },
+      ];
     });
     ctx.addComp((numb) => {
-      return [+numb + 1];
+      return [+numb + +isAmount];
     });
   };
   return (

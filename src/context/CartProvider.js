@@ -3,10 +3,14 @@ import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
   const [totAmount, setTotalAmount] = useState(0);
-
+  const [itemTotal, setItemTotal] = useState([]);
   return (
     <CartContext.Provider
-      value={{ totalAmount: totAmount, addComp: setTotalAmount }}
+      value={{
+        totalAmount: totAmount,
+        addComp: setTotalAmount,
+        addItem: setItemTotal,
+      }}
     >
       {props.children}
     </CartContext.Provider>
