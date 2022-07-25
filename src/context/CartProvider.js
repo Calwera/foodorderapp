@@ -10,6 +10,7 @@ const CartProvider = (props) => {
         totalAmount: totAmount,
         addComp: setTotalAmount,
         addItem: setItemTotal,
+        items: itemTotal,
       }}
     >
       {props.children}
