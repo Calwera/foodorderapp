@@ -1,32 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import classes from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
-import Input from "../UI/Input";
 import CartContext from "../../context/cart-context";
 
 const MealItem = (props) => {
-  const ctx = useContext(CartContext);
+  const cartCtx = useContext(CartContext);
   const price = `$${props.meal.price.toFixed(2)}`;
-  const [isAmount, setAmount] = useState(1);
-  const setQuantity = (amount) => {
-    setAmount(amount);
-  };
-  const addMealto = () => {
-    ctx.addItem((item) => {
-      return [
-        ...item,
-        {
-          id: props.meal.id,
-          name: props.meal.name,
-          price: props.meal.price,
-          quantity: isAmount,
-        },
-      ];
-    });
-    ctx.addComp((numb) => {
-      return [+numb + +isAmount];
+
+  const AddToCartHandler = (amount) => {
+    cartCtx.addItem({
+      id: props.meal.id,
+      name: props.meal.name,
+      amount: amount,
+      price: props.meal.price,
     });
   };
+
   return (
     <li className={classes.meal}>
       <div>
@@ -35,19 +24,7 @@ const MealItem = (props) => {
         <p className={classes.price}>{price}</p>
       </div>
       <div>
-        <Input
-          quantity={setQuantity}
-          label="Amount"
-          input={{
-            id: "amount_" + props.meal.id,
-            type: "number",
-            min: "1",
-            max: "5",
-            step: "1",
-            defaultValue: "1",
-          }}
-        />
-        <MealItemForm onCustomClick={addMealto} />
+        <MealItemForm onAddToCart={AddToCartHandler} />
       </div>
     </li>
   );

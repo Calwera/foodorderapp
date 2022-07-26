@@ -4,14 +4,18 @@ import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const ctx = useContext(CartContext);
+  const cartCtx = useContext(CartContext);
 
-  const cartItemRemoveHandler = (id) => {};
-  const cartItemAddHandler = (item) => {};
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {ctx.items.map((item) => (
+      {cartCtx.items.map((item) => (
         <CartItem
           key={item.id}
           name={item.name}
@@ -23,16 +27,7 @@ const Cart = (props) => {
       ))}
     </ul>
   );
-  const totalPrice = (
-    <span>
-      $
-      {ctx.items
-        .reduce((acc, item) => {
-          return acc.price + item.price;
-        })
-        .toFixed(2)}
-    </span>
-  );
+  const totalPrice = <span>${cartCtx.totalAmount.toFixed(2)}</span>;
   const orderFood = () => {
     console.log("Ordering...");
   };
